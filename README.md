@@ -9,7 +9,7 @@ see : [env](env)
 
 
 
-# create few softlinks (softlinks are great way to save space and avoid copying data)
+# create few symbolic-links (symbolic-links are great way to save space and avoid copying data)
 1. cd mdbenchgnn/
 2. ln -s ../example_mdbenchgnn example
 3. ln -s  path/to/output_dir output_dir_sl
