@@ -1,5 +1,5 @@
 <div style="text-align:center">
-  <img src="path/to/your/image.jpg" alt="Image" width="350" height="350">
+  <img src="assets/mdbenchgnn_logo.jpeg" alt="Image" width="350" height="350">
 </div>
 
 
