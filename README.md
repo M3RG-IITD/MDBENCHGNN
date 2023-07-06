@@ -1,10 +1,11 @@
 # Setup environment
 see : [env](env)
 
-# Download example data and model weights(~450 MB)
+# Download example data and model weights(~450 MB): folder example_mdbenchgnn 
 1. cd ../
 2. pip install gdown (install gdown to download data from google drive)
 3. gdown --folder --id 1PrrKaMBbjMyt3DrXM94XQ-X48nVrf-kY
+
 
 
 
