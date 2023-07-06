@@ -1,4 +1,4 @@
-![](assets/mdbenchgnn_logo.jpeg =50x50)
+<img src="assets/mdbenchgnn_logo.jpeg" width="100" height="100">
 # Setup environment
 see : [env](env)
 
