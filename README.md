@@ -2,17 +2,17 @@
 see : [env](env)
 
 # Download example data and model weights(~450 MB)
-cd ../
-pip install gdown (install gdown to download data from google drive)
-gdown --folder --id 1PrrKaMBbjMyt3DrXM94XQ-X48nVrf-kY
-ln -s ../example_mdbenchgnn/  example
+1. cd ../
+2. pip install gdown (install gdown to download data from google drive)
+3. gdown --folder --id 1PrrKaMBbjMyt3DrXM94XQ-X48nVrf-kY
 
 
-create couple of softlinks (softlinks are great way to save space and avoid copying data)
-cd mdbenchgnn/
-ln -s ../example_ example
-ln -s  path/to/output_dir output_dir_sl
-ln -s  path/to/data_dir data_ls
+
+# create couple of softlinks (softlinks are great way to save space and avoid copying data)
+1. cd mdbenchgnn/
+2. ln -s ../example_mdbenchgnn example
+3. ln -s  path/to/output_dir output_dir_sl
+4. ln -s  path/to/data_dir data_ls
 
 
 # Models supported
