@@ -36,7 +36,7 @@ see : [env](env)
 
 # Try on example data: [example/lips/data](example/lips/data)
 1. to train the models go through: [scripts/train](scripts/train)
-2. to run a MD simulation on trained model: [scripts/train](scripts/md_simulation)
+2. to run a MD simulation on trained model: [scripts/md_simulation](scripts/md_simulation)
 
 
 
