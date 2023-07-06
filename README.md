@@ -1,3 +1,4 @@
+![](assets/mdbenchgnn_logo.jpeg)
 # Setup environment
 see : [env](env)
 
