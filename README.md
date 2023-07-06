@@ -1,4 +1,6 @@
-![img|320x271](assets/mdbenchgnn_logo.jpeg)
+<div style="text-align:center">
+  <img src="assets/mdbenchgnn_logo.jpeg" alt="Image" width="200" height="200">
+</div>
 # Setup environment
 see : [env](env)
 
