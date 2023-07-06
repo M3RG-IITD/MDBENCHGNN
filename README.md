@@ -1,14 +1,7 @@
-<style>
-  .centered-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 50%;
-    height: auto;
-  }
-</style>
+<div style="text-align:center">
+  <img src="path/to/your/image.jpg" alt="Image" width="350" height="350">
+</div>
 
-![Image](assets/mdbenchgnn_logo.jpeg){: .centered-image }
 
 # Setup environment
 see : [env](env)
