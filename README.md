@@ -1,4 +1,4 @@
-<div style="text-align:center"><img src="assets/mdbenchgnn_logo.jpeg" width="100" height="100"></div>
+<div style="text-align:center"><img src="assets/mdbenchgnn_logo.jpeg" width="100" height="100"/></div>
 
 # Setup environment
 see : [env](env)
