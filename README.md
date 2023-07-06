@@ -1,6 +1,7 @@
 <div style="text-align:center">
-  <img src="assets/mdbenchgnn_logo.jpeg" alt="Image" width="200" height="200">
+  <img src="assets/mdbenchgnn_logo.jpeg" alt="Image" width="400" height="400">
 </div>
+
 # Setup environment
 see : [env](env)
 
