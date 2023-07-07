@@ -482,6 +482,7 @@ def main() -> None:
         )
         wandb.run.summary["params"] = args_dict_json
 
+    import pdb; pdb.set_trace()
     tools.train(
         model=model,
         loss_fn=loss_fn,
