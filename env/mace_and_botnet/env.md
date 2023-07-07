@@ -1,12 +1,10 @@
 # Create a virtual environment and activate it
 conda create --name ma_bo
 conda activate ma_bo
+conda install python==3.9.12
 
 # Install PyTorch
-conda install pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvidia
-
-# (optional) Install MACE's dependencies from Conda as well
-conda install numpy scipy matplotlib ase opt_einsum prettytable pandas e3nn
+pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
 
 cd mdbenchgnn/models/mace
 pip install  -e . 
