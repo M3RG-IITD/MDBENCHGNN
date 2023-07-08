@@ -1,7 +1,7 @@
 example:
 [make sure to activate relevant conda environment]
 export WANDB_MODE=disabled
-export CUDA_VISIBLE_DEVICES=1 
+export CUDA_VISIBLE_DEVICES=0
 
 nequip-train configs/nequip/lips/lips.yaml
 
