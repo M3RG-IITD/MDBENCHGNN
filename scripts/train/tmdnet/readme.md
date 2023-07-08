@@ -5,5 +5,6 @@ GPUs can be selected by setting the CUDA_VISIBLE_DEVICES environment variable. O
 
 example:
 [make sure to activate relevant conda environment]
-CUDA_VISIBLE_DEVICES=0 torchmd-train-custom  --conf configs/torchmdnet/lips/lips.yaml 
+export CUDA_VISIBLE_DEVICES=0 
+torchmd-train-custom  --conf configs/torchmdnet/lips/lips.yaml 
 
