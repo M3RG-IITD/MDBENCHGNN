@@ -3,12 +3,21 @@
 3. conda install  cudatoolkit=11.1  -c conda-forge
 4. pip install torch==1.10.1+cu111  -f https://download.pytorch.org/whl/cu111/torch_stable.html
 5. pip install wandb
+<<<<<<< HEAD
 6. conda activate neq_alg
 7. cd mdbenchgnn/models/nequip
 8. pip install --no-deps -e . 
 9. cd mdbenchgnn/models/allegro
 10. pip install --no-deps -e . 
 11. pip install python-dateutil
+=======
+7. pip install --no-deps -r env/nequip_and_allegro/requirements.txt
+6. cd mdbenchgnn/models/nequip
+7. pip install --no-deps -e .
+8. cd mdbenchgnn/models/allegro
+9. pip install --no-deps -e .
+
+>>>>>>> a2d858f7b37d40e6dc5b54eb4dc6c18b1590ee18
 
 note: it is recommended to use "pip install --no-deps [package_name]" to avoid installation of conflicting dependencies
 
@@ -16,26 +25,3 @@ if getting module not found error please check the version in neq_alg.yml and in
 example: I got: module not found :torch-runstats (check the version of torch-runstats in neq_alg.yml, it is 0.2.0)
 pip install --no-deps torch-runstats==0.2.0
 
-
-numpy==1.24.3
-torch-runstats==0.2.0
-torch-ema==0.3
-e3nn==0.5.1
-tqdm=4.65.0
-ase==3.22.1
-opt-einsum-fx==0.1.4
-scipy==1.10.1
-sympy==1.12
-matplotlib==3.7.1
-packaging==23.1
-opt-einsum==3.3.0
-mpmath==1.3.0
-importlib-resources==5.12.0
-python-dateutil==2.8.2
-pyparsing==3.0.9
-pillow==9.5.0
-kiwisolver==1.4.4
-fonttools==4.39.4
-cycler==0.11.0
-contourpy==1.0.7
-zipp==3.15.0
