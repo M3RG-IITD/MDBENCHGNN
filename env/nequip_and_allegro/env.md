@@ -3,21 +3,14 @@
 3. conda install  cudatoolkit=11.1  -c conda-forge
 4. pip install torch==1.10.1+cu111  -f https://download.pytorch.org/whl/cu111/torch_stable.html
 5. pip install wandb
-<<<<<<< HEAD
-6. conda activate neq_alg
+6. pip install --no-deps -r env/nequip_and_allegro/requirements.txt
 7. cd mdbenchgnn/models/nequip
 8. pip install --no-deps -e . 
 9. cd mdbenchgnn/models/allegro
 10. pip install --no-deps -e . 
 11. pip install python-dateutil
-=======
-7. pip install --no-deps -r env/nequip_and_allegro/requirements.txt
-6. cd mdbenchgnn/models/nequip
-7. pip install --no-deps -e .
-8. cd mdbenchgnn/models/allegro
-9. pip install --no-deps -e .
 
->>>>>>> a2d858f7b37d40e6dc5b54eb4dc6c18b1590ee18
+
 
 note: it is recommended to use "pip install --no-deps [package_name]" to avoid installation of conflicting dependencies
 
