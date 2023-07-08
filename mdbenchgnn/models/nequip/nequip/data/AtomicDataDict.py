@@ -42,7 +42,10 @@ def _fix_irreps_dict(d: Dict[str, Any]):
 def _irreps_compatible(ir1: Dict[str, o3.Irreps], ir2: Dict[str, o3.Irreps]):
     return all(ir1[k] == ir2[k] for k in ir1 if k in ir2)
 
-
+# def debug_fn():
+#     print("debug began")
+#     import pdb; pdb.set_trace()
+    
 @torch.jit.script
 def with_edge_vectors(data: Type, with_lengths: bool = True) -> Type:
     """Compute the edge displacement vectors for a graph.
@@ -68,6 +71,8 @@ def with_edge_vectors(data: Type, with_lengths: bool = True) -> Type:
         pos = data[_keys.POSITIONS_KEY]
         edge_index = data[_keys.EDGE_INDEX_KEY]
         edge_vec = pos[edge_index[1]] - pos[edge_index[0]]
+        # import pdb; pdb.set_trace()
+        #debug_fn()
         if _keys.CELL_KEY in data:
             # ^ note that to save time we don't check that the edge_cell_shifts are trivial if no cell is provided; we just assume they are either not present or all zero.
             # -1 gives a batch dim no matter what

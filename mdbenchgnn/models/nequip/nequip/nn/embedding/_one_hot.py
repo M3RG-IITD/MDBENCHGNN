@@ -38,6 +38,7 @@ class OneHotAtomEncoding(GraphModuleMixin, torch.nn.Module):
 
     def forward(self, data: AtomicDataDict.Type) -> AtomicDataDict.Type:
         type_numbers = data[AtomicDataDict.ATOM_TYPE_KEY].squeeze(-1)
+        # import pdb;pdb.set_trace()
         one_hot = torch.nn.functional.one_hot(
             type_numbers, num_classes=self.num_types
         ).to(device=type_numbers.device, dtype=data[AtomicDataDict.POSITIONS_KEY].dtype)
