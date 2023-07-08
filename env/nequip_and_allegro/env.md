@@ -8,6 +8,7 @@
 8. pip install --no-deps -e . 
 9. cd mdbenchgnn/models/allegro
 10. pip install --no-deps -e . 
+11. pip install python-dateutil
 
 note: it is recommended to use "pip install --no-deps [package_name]" to avoid installation of conflicting dependencies
 
