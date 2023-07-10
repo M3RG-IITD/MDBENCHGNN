@@ -1,7 +1,7 @@
+## module load compiler/gcc/6.5.0/compilervars ( if getting : gcc: error: unrecognized command line option ‘-std=c++17’)
 conda env create -f eqf_env.yml
 conda activate eqf
+cd mdbenchgnn/models/ocp
+git checkout b5a197f
+pip install -e .
 
-pip install e3nn==0.4.4
-pip install git+https://github.com/Open-Catalyst-Project/ocp@b5a197f
-pip  install matplotlib==3.3.4
-pip install lmdb==1.1.1
