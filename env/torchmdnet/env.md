@@ -7,7 +7,6 @@
 6. pip install pytorch-lightning==1.6.3
 7. pip install torch-geometric==2.3.0
 8. pip install h5py==3.8.0
-9. pip install tqdm
-10. pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-11. cd mdbenchgnn/models/torchmd-net/
-12. pip install --no-deps -e  .
+9. pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+10. cd mdbenchgnn/models/torchmd-net/
+11. pip install --no-deps -e  .
