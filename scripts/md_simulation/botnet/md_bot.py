@@ -5,7 +5,7 @@ import numpy as np
 import time
 import torch
 import sys
-#sys.path.append("/home/sire/phd/srz228573/mace")
+sys.path.append("mdbenchgnn/models/mace")
 from mace.calculators import MACECalculator
 from tqdm import tqdm
 torch.set_default_dtype(torch.float64)
