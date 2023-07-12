@@ -52,9 +52,9 @@ splits: null
 standardize: true
 test_interval: 10
 test_size: null
-train_size: 950
+train_size: 19000
 trainable_rbf: false
-val_size: 50
+val_size: 1000
 weight_decay: 0.0
 energy_key: energy # dataset
 forces_key: forces # dataset

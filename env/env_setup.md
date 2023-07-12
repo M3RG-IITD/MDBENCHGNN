@@ -1,6 +1,6 @@
 # Python environment setup details:
 
-We will need 5 environemnts to work with all the functionalities of this code:
+We will need 4 environemnts to work with all the functionalities of this code:
 
 1. Nequip and Allegro - name : neq_alg
 
