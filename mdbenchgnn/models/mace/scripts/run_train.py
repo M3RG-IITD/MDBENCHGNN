@@ -46,20 +46,21 @@ def main() -> None:
         )
         config_type_weights = {"Default": 1.0}
 
+    import pdb; pdb.set_trace()
     # Data preparation
     collections, atomic_energies_dict = get_dataset_from_xyz(
-        train_path=args.train_file,
-        valid_path=args.valid_file,
-        valid_fraction=args.valid_fraction,
-        config_type_weights=config_type_weights,
-        test_path=args.test_file,
-        seed=args.seed,
-        energy_key=args.energy_key,
-        forces_key=args.forces_key,
-        stress_key=args.stress_key,
-        virials_key=args.virials_key,
-        dipole_key=args.dipole_key,
-        charges_key=args.charges_key,
+        train_path=args.train_file, # train/botnet.xyz
+        valid_path=args.valid_file, # valid/botnet.xyz
+        valid_fraction=args.valid_fraction, # 0.1
+        config_type_weights=config_type_weights, # {'Default': 1.0}
+        test_path=args.test_file, # None
+        seed=args.seed,# 123
+        energy_key=args.energy_key,# energy
+        forces_key=args.forces_key,# forces
+        stress_key=args.stress_key,# stress
+        virials_key=args.virials_key,# virials
+        dipole_key=args.dipole_key,# dipole
+        charges_key=args.charges_key,# charges
     )
 
     logging.info(

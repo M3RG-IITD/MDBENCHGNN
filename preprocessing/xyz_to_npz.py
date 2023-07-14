@@ -25,7 +25,7 @@ def main():
         positions.append(atoms[i].get_positions())
         cell.append(atoms[i].get_cell())
         atomic_numbers.append(atoms[i].get_atomic_numbers())
-        energy.append(atoms[i].get_potential_energy())
+        energy.append(atoms[i].get_total_energy())
         forces.append(atoms[i].get_forces())
     positions = np.array(positions)
     cell = np.array(cell)[0]

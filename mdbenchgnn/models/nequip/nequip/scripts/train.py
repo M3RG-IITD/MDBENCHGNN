@@ -146,6 +146,8 @@ def fresh_start(config):
 
     # = Load the dataset =
     dataset = dataset_from_config(config, prefix="dataset")
+    #AtomicData(atom_types=[83, 1], cell=[3, 3], edge_cell_shift=[2112, 3], edge_index=[2, 2112], forces=[83, 3], pbc=[3], pos=[83, 3], r_max=5.0, total_energy=[1])
+    
     logging.info(f"Successfully loaded the data set of type {dataset}...")
     try:
         validation_dataset = dataset_from_config(config, prefix="validation_dataset")
@@ -157,6 +159,7 @@ def fresh_start(config):
         validation_dataset = None
 
     # = Train/test split =
+    # import pdb; pdb.set_trace()
     trainer.set_dataset(dataset, validation_dataset)
 
     # = Build model =

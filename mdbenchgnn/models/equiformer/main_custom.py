@@ -13,7 +13,7 @@ from logger import FileLogger
 from pathlib import Path
 from typing import Iterable, Optional
 
-import datasets.pyg.custom_dataset as custom_dataset
+
 
 import nets
 from nets import model_entrypoint
@@ -104,6 +104,7 @@ def get_args_parser():
     parser.add_argument('--forces-key', type=str, default='forces')
     parser.add_argument('--positions-key', type=str, default='pos')
     parser.add_argument('--atomic-num-key', type=str, default='atomic_numbers')
+    parser.add_argument('--data-format', type=str, default='npz')
     
     
     
@@ -152,6 +153,12 @@ def main(args):
     # dataset_arg=args.target,# aspirin
     # train_size=args.train_size, val_size=args.val_size, test_size=None, 
     # seed=args.seed)
+    if args.data_format == 'npz':
+        import datasets.pyg.custom_dataset as custom_dataset
+    
+    else:
+        import datasets.pyg.custom_data_xyz as custom_dataset
+        
     train_dataset = custom_dataset.get_datasets(args.data_path  + "train", args.energy_key, args.forces_key, args.positions_key, args.atomic_num_key)
                     
     val_dataset = custom_dataset.get_datasets(args.data_path  + "val", args.energy_key, args.forces_key, args.positions_key, args.atomic_num_key)
