@@ -1,7 +1,7 @@
 export PYTHONNOUSERSITE=True    # prevent using packages from base
 
 
-python mdbenchgnn/models/equiformer/main_custom_xyz.py \
+python mdbenchgnn/models/equiformer/main_custom.py \
     --output-dir 'output_dir_sl/equiformer/lips_xyz/' \
     --model-name 'graph_attention_transformer_nonlinear_exp_l2_md17' \
     --input-irreps '64x0e' \

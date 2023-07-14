@@ -67,7 +67,7 @@ class CUSTOMDATASET(InMemoryDataset):
         # positions, cell, atomic_numbers, energy, forces = [], [], [], [], []
         for i in range(n_points):
             samples.append(Data(z=atoms[i].get_atomic_numbers(), pos=atoms[i].get_positions(), y=np.array(atoms[i].get_total_energy()).reshape(-1,1), dy=atoms[i].get_forces()))
-            import pdb;pdb.set_trace() # Data(y=[1, 1], pos=[83, 3], z=[83], dy=[83, 3])
+            #import pdb;pdb.set_trace() # Data(y=[1, 1], pos=[83, 3], z=[83], dy=[83, 3])
             
 
         if self.pre_filter is not None:
