@@ -66,7 +66,12 @@ class CUSTOMDATASET(InMemoryDataset):
         samples = []
         # positions, cell, atomic_numbers, energy, forces = [], [], [], [], []
         for i in range(n_points):
-            samples.append(Data(z=atoms[i].get_atomic_numbers(), pos=atoms[i].get_positions(), y=np.array(atoms[i].get_total_energy()).reshape(-1,1), dy=atoms[i].get_forces()))
+            samples.append(Data(z=torch.from_numpy(np.array(atoms[i].get_atomic_numbers())).long(),
+                                pos=torch.from_numpy(np.array(atoms[i].get_positions())).float(), 
+                                y=torch.from_numpy(np.array(atoms[i].get_total_energy()).reshape(-1,1)).float(), 
+                                dy=torch.from_numpy(np.array(atoms[i].get_forces())).float()
+                                )
+                            )
             #import pdb;pdb.set_trace() # Data(y=[1, 1], pos=[83, 3], z=[83], dy=[83, 3])
             
 

@@ -71,6 +71,7 @@ class CUSTOMDATASET(InMemoryDataset):
             # import pdb as pdb
             # pdb.set_trace()
             samples.append(Data(z=z, pos=pos, y=y.unsqueeze(1), dy=dy))
+            import pdb as pdb; pdb.set_trace()
 
         if self.pre_filter is not None:
             samples = [data for data in samples if self.pre_filter(data)]
