@@ -4,7 +4,7 @@
 # run_name contains logfiles and saved models
 # process contains processed data sets
 # if 'root'/'run_name' exists, 'root'/'run_name'_'year'-'month'-'day'-'hour'-'min'-'s' will be used instead.
-root: output_dir_sl/nequip/lips/xyz
+root: output_dir_sl/nequip/lips_xyz
 run_name: run1
 seed: 123                                                                         # model seed
 dataset_seed: 456                                                                 # data set seed

@@ -100,7 +100,7 @@ edge_eng_mlp_initialization: uniform
 # note that if your data set uses pbc, you need to also pass an array that maps to the nequip "pbc" key
 # for extxyz file
 dataset: ase
-dataset_file_name: data_sl/mdsim_data/mixed_check/train/botnet.xyz
+dataset_file_name: example/lips/data/train/botnet.xyz
 ase_args:
   format: extxyz                                                                     # type of data set, can be npz or ase
 
@@ -108,14 +108,10 @@ ase_args:
 
 
 validation_dataset: ase
-validation_dataset_file_name: data_sl/mdsim_data/mixed_check/val/botnet.xyz             # path to data set file
+validation_dataset_file_name: example/lips/data/val/botnet.xyz             # path to data set file
 
 # A list of atomic types to be found in the data. The NequIP types will be named with the chemical symbols, and inputs with the correct atomic numbers will be mapped to the corresponding types.
 chemical_symbols:
-  - H
-  - C
-  - N
-  - O
   - Li
   - P
   - S
@@ -131,7 +127,7 @@ save_checkpoint_freq: -1                                                        
 save_ema_checkpoint_freq: -1                                                       # frequency to save the intermediate ema checkpoint. no saving of intermediate checkpoints when the value is not positive.
 
 # training
-n_train: 1000                                                                  # number of training data
+n_train: 19000                                                                    # number of training data
 n_val: 1000                                                                   # number of validation data
 learning_rate: 0.005                                                               # learning rate, we found values between 0.01 and 0.005 to work best - this is often one of the most important hyperparameters to tune
 batch_size: 1                                                                # batch size, we found it important to keep this small for most applications including forces (1-5); for energy-only training, higher batch sizes work better

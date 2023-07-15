@@ -4,7 +4,7 @@
 # run_name contains logfiles and saved models
 # process contains processed data sets
 # if 'root'/'run_name' exists, 'root'/'run_name'_'year'-'month'-'day'-'hour'-'min'-'s' will be used instead.
-root: output_dir_sl/allegro/lips_xyz
+root: output_dir_sl/allegro/3bpa_lips
 run_name: run1
 seed: 123                                                                         # model seed
 dataset_seed: 456                                                                 # data set seed
@@ -131,7 +131,7 @@ save_checkpoint_freq: -1                                                        
 save_ema_checkpoint_freq: -1                                                       # frequency to save the intermediate ema checkpoint. no saving of intermediate checkpoints when the value is not positive.
 
 # training
-n_train: 1000                                                                  # number of training data
+n_train: 19000                                                                    # number of training data
 n_val: 1000                                                                   # number of validation data
 learning_rate: 0.005                                                               # learning rate, we found values between 0.01 and 0.005 to work best - this is often one of the most important hyperparameters to tune
 batch_size: 1                                                                # batch size, we found it important to keep this small for most applications including forces (1-5); for energy-only training, higher batch sizes work better
