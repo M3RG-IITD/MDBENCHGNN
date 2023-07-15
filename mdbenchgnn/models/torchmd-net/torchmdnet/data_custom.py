@@ -8,7 +8,7 @@ from pytorch_lightning.utilities import rank_zero_warn
 from torchmdnet import datasets
 from torchmdnet.utils import make_splits, MissingEnergyException
 from torch_scatter import scatter
-import  torchmdnet.datasets.custom_data_npz as custom_dataset
+# import  torchmdnet.datasets.custom_data_npz as custom_dataset
 
 
 class DataModule(LightningDataModule):
@@ -20,6 +20,13 @@ class DataModule(LightningDataModule):
         self.dataset = dataset
 
     def setup(self, stage):
+        
+        if self.hparams["data_format"] == 'npz':
+                import  torchmdnet.datasets.custom_data_npz as custom_dataset
+            
+        else:
+                import  torchmdnet.datasets.custom_data_xyz as custom_dataset
+                
         self.train_dataset = custom_dataset.get_datasets(self.hparams["dataset_root"]  + "train", self.hparams["energy_key"], self.hparams["forces_key"], self.hparams["positions_key"], self.hparams["atomic_num_key"])
         self.val_dataset = custom_dataset.get_datasets(self.hparams["dataset_root"]  + "val", self.hparams["energy_key"], self.hparams["forces_key"], self.hparams["positions_key"], self.hparams["atomic_num_key"])
         self.test_dataset = custom_dataset.get_datasets(self.hparams["dataset_root"]  + "test", self.hparams["energy_key"], self.hparams["forces_key"], self.hparams["positions_key"], self.hparams["atomic_num_key"])

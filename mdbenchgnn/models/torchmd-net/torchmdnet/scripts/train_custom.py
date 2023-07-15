@@ -64,6 +64,7 @@ def get_args():
     parser.add_argument('--forces-key', type=str, default='forces', help='force key in npz file')
     parser.add_argument('--positions-key', type=str, default='pos', help='positions key in npz file')
     parser.add_argument('--atomic-num-key', type=str, default='atomic_numbers', help='atomic num key in npz file')
+    parser.add_argument('--data-format', type=str, default='npz')
 
     # model architecture
     parser.add_argument('--model', type=str, default='graph-network', choices=models.__all__, help='Which model to train')

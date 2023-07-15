@@ -32,8 +32,8 @@ NOTE:
 2. name the xyz file as botnet.xyz and npz as nequip_npz.npz to avoid error's
 
 
-Mace and Botnet : input file -> xyz format
-Nequip, Allegro, Equiformer and torchmdNET : input file -> npz format
+
+All the models: Nequip, Allegro, Equiformer, torchmdNET, Mace and Botnet support both npz and xyz format for training
 
 
 converting XYZ to NPZ:
