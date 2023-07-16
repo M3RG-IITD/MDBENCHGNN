@@ -49,7 +49,7 @@ see : [preprocessing](preprocessing)
 
 # Postprocess
 
-# CITING
+# Citing
 [https://zenodo.org/record/8151657](https://zenodo.org/record/8151657)
 
 ## Acknowledgement ##
