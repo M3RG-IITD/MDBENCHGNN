@@ -152,7 +152,7 @@ early_stopping_upper_bounds:                                                    
 
 # loss function
 loss_coeffs:                                                                        
-  forces: 6889                                                                     # if using PerAtomMSELoss, a default weight of 1:1 on each should work well
+  forces: 1                                                                    # if using PerAtomMSELoss, a default weight of 1:1 on each should work well
   total_energy:                                                                    
     - 1
     - PerAtomMSELoss
