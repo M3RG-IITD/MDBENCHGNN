@@ -1,3 +1,6 @@
+# MDBENCHGNN 
+Equivariant Graph Neural Networks for building interatomic potentials.
+
 [![DOI](https://zenodo.org/badge/663177034.svg)](https://zenodo.org/badge/latestdoi/663177034)
 
 <div style="text-align:center">
