@@ -11,7 +11,7 @@ NPZ and XYZ can be interconverted b/w each other.
 Information needed:
 
 1. 'atomic_numbers'
-2. 'cell' [required for mace and botnet (eg: MD17 data doesnt have cell info at this point)]
+2. 'cell' 
 3. 'forces'
 4. 'energy'
 5. 'positions'
@@ -29,7 +29,7 @@ example of accepted data: present at example/lips/data
 
 NOTE: 
 1. Nequip, Allegro, Equiformer and TorchmdNET can work with just atomic numbers, forces, energy and positions.
-2. name the xyz file as botnet.xyz and npz as nequip_npz.npz to avoid error's
+2. By default the models use the xyz file name as botnet.xyz and npz as nequip_npz.npz 
 
 
 
