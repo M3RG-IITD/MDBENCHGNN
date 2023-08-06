@@ -8,21 +8,20 @@ from tqdm import tqdm
 import argparse
 
 #def main(args): later add argparser
-def main():
+def main(args=None):
     """Run MD simulation with NequIP model
     """
-    # model_path = args.model_path
-    # temp = args.temp
-    # system = args.system
-    model_path = "example/lips/nequip/deployed.pth"
+    model_path = args.model_path
+    temp = args.temp
+    system = args.system
     calculator = NequIPCalculator.from_deployed_model(model_path= model_path, device='cuda')
     device = "cuda"; model_name = "nequip"
 
-    system = "lips"
+    system = args.system
     
-    out_path = "./"
+    out_path = args.out_path
     for i in tqdm(range(10)):
-        init_conf = read('example/lips/data/test/botnet.xyz', str(i))
+        init_conf = read(args.init_conf_path, str(i))
         init_conf.set_calculator(calculator)
         dyn = Langevin(init_conf, 2*units.fs, temperature_K=520, friction=5e-3)
         def write_frame():
@@ -32,11 +31,14 @@ def main():
         print(f"MD finished!{i}")
         
 if __name__ == "__main__":
-    # parser = argparse.ArgumentParser(description="Run MD simulation with NequIP model")
-    # parser.add_argument("--model_path", type=str, default="example/lips/nequip/deployed.pth", help="Path to the model")
-    # parser.add_argument("--temp", type=float, default=520, help="Temperature in Kelvin")
-    # parser.add_argument("--system", type=str, default="lips", help="System name")
+    parser = argparse.ArgumentParser(description="Run MD simulation with NequIP model")
+    parser.add_argument("--model_path", type=str, default="example/lips/nequip/deployed.pth", help="Path to the model")
+    parser.add_argument("--init_conf_path", type=str, default="example/lips/data/test/botnet.xyz", help="Path to the initial configuration")
+    parser.add_argument("--out_path", type=str, default="./", help="Output path")
+    
+    parser.add_argument("--temp", type=float, default=520, help="Temperature in Kelvin")
+    parser.add_argument("--system", type=str, default="lips", help="System name")
 
-    # args = parser.parse_args()
-    # main(args)
-    main()
+    args = parser.parse_args()
+    main(args)
+    #main()
