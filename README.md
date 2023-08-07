@@ -51,7 +51,7 @@ see : [preprocessing](preprocessing)
 
 
 # Postprocess
-1. Radial Distribution function [scripts/Struct_props](scripts/Struct_props)
+1. Radial Distribution function [scripts/struct_props](scripts/struct_props)
 
 # Citing
 [https://zenodo.org/record/8151657](https://zenodo.org/record/8151657)
