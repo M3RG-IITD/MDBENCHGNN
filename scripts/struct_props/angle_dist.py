@@ -16,11 +16,13 @@ def main(args=None):
     Angles_mean=np.mean(np.array(Angles),axis=0)
     sns.displot(Angles_mean,kind="kde")
     plt.xlabel(Angle_elems+' Angle')
-    plt.show()
+    plt.savefig(args.outpath+'/'+Angle_elems+".png")    
+#plt.show()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Calculate and plot RDF")
     parser.add_argument("--traj_path", required=True, help="Path to trajectory file")
+    parser.add_argument("--out_path", required=True, help="Path to output file")
     parser.add_argument("--angle", default='Li-P-S', help="Angle to calculate in format 'Li-P-S' ")
     
     
