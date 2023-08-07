@@ -30,11 +30,13 @@ def main(args=None):
     plt.xlabel('Distance (Angstrom)')
     plt.ylabel(yaxis_label)
     plt.title('Radial Distribution Function')
-    plt.show()
+    plt.savefig(args.out_path+"/"+yaxis_label+".png")    
+    #plt.show()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Calculate and plot RDF")
     parser.add_argument("--traj_path", required=True, help="Path to trajectory file")
+    parser.add_argument("--out_path", required=True, help="Path to output file")
     parser.add_argument("--rmin", type=float, default=0.0, help="Minimum distance for RDF (Angstrom)")
     parser.add_argument("--rmax", type=float, default=10.0, help="Maximum distance for RDF (Angstrom)")
     parser.add_argument("--dr", type=float, default=0.02, help="Bin size for histogram (Angstrom)")
