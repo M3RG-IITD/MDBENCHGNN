@@ -20,14 +20,14 @@ def main(args=None):
     if(args.elements!=None)
         elements = (args.elements).split('-')
         rdf = analysis.get_rdf(rmax=rmax, nbins=nbins, imageIdx=None, elements=elements, return_dists=False)
-        yaxis_label='Partial RDF '+args.elements
+        yaxis_label='Partial RDF: '+args.elements
     else:
         rdf = analysis.get_rdf(rmax=rmax, nbins=nbins, imageIdx=None, elements=None, return_dists=False)
         yaxis_label='Total RDF'
     g_r = np.mean(np.array(rdf), axis=0)
 
     plt.plot(r, g_r)
-    plt.xlabel('Distance')
+    plt.xlabel('Distance (Angstrom)')
     plt.ylabel(yaxis_label)
     plt.title('Radial Distribution Function')
     plt.show()
