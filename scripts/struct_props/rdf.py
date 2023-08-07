@@ -12,7 +12,7 @@ def main(args=None):
     
     rmin = args.rmin
     dr = args.dr
-    rmax = np.round(np.min([(np.min(Traj[0].get_cell_lengths_and_angles()[:3]) - 1) / 2, args.rmax]), 1)
+    rmax = np.round(np.min([(np.min(Traj[0].cell.cellpar()[:3]) - 1) / 2, args.rmax]), 1)
     nbins = int((rmax - rmin) / dr)
     r = np.linspace(rmin, rmax, nbins)
 
