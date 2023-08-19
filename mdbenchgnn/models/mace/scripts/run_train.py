@@ -46,7 +46,7 @@ def main() -> None:
         )
         config_type_weights = {"Default": 1.0}
 
-    import pdb; pdb.set_trace()
+    #import pdb; pdb.set_trace()
     # Data preparation
     collections, atomic_energies_dict = get_dataset_from_xyz(
         train_path=args.train_file, # train/botnet.xyz
