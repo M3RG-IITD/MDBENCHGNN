@@ -5,6 +5,17 @@ import numpy as np
 from ase.io import read
 import argparse
 import matplotlib.pyplot as plt
+import pandas as pd
+
+#Example command:
+"""
+python rdf.py \
+--traj_path "/home/civil/btech/ce1180169/MDBENCHGNN/example_mdbenchgnn/lips20_small/data/test/botnet_g80.xyz" \
+--out_path  "/home/civil/btech/ce1180169/MDBENCHGNN/example_mdbenchgnn/lips20_small/data/test/" \
+--sys_name 'lips20_g80' 
+
+"""
+
 
 def main(args=None):
     
@@ -17,7 +28,8 @@ def main(args=None):
     r = np.linspace(rmin, rmax, nbins)
 
     analysis = Analysis(Traj)
-    if(args.elements!=None)
+    print("Calculating RDF .....")
+    if(args.elements!=None):
         elements = (args.elements).split('-')
         rdf = analysis.get_rdf(rmax=rmax, nbins=nbins, imageIdx=None, elements=elements, return_dists=False)
         yaxis_label='Partial RDF: '+args.elements
@@ -30,7 +42,11 @@ def main(args=None):
     plt.xlabel('Distance (Angstrom)')
     plt.ylabel(yaxis_label)
     plt.title('Radial Distribution Function')
-    plt.savefig(args.out_path+"/"+yaxis_label+".png")    
+    plt.savefig(args.out_path+"/"+args.sys_name+"_"+yaxis_label+".png")
+    
+    data = pd.DataFrame({'r': r, 'g_r': g_r})
+    data.to_csv(args.out_path+"/"+args.sys_name+"_"+yaxis_label+".csv")
+    print("Done..., check ouput at "+args.out_path)    
     #plt.show()
 
 if __name__ == "__main__":
@@ -39,8 +55,12 @@ if __name__ == "__main__":
     parser.add_argument("--out_path", required=True, help="Path to output file")
     parser.add_argument("--rmin", type=float, default=0.0, help="Minimum distance for RDF (Angstrom)")
     parser.add_argument("--rmax", type=float, default=10.0, help="Maximum distance for RDF (Angstrom)")
-    parser.add_argument("--dr", type=float, default=0.02, help="Bin size for histogram (Angstrom)")
+    parser.add_argument("--dr", type=float, default=0.05, help="Bin size for histogram (Angstrom)")
     parser.add_argument("--elements", type=str, default=None, help="Elements for partial pdf in format 'A-B' ")
+    parser.add_argument("--sys_name", type=str, default='System', help="System name")
+    
     args = parser.parse_args()
     
     main(args)
+    
+
