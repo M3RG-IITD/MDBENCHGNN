@@ -61,16 +61,16 @@ def main():
     f_mae=0
     
     for batch in data_loader:
-        counter+=args.batch_size
+        counter+=1
         batch = batch.to(device)
         output = model(batch.to_dict())
-        temp_e=(abs(batch['energy']-output['energy'])).sum()
-        temp_f=(abs(batch['forces']-output['forces'])).sum()
-        print("Batch: ",counter,"\te_mae: ",round(temp_e.item()/args.batch_size,3),"\tf_mae: ",round(temp_f.item()/(args.batch_size*3),3))
+        temp_e=(abs(batch['energy']-output['energy'])).mean()
+        temp_f=(abs(batch['forces']-output['forces'])).mean()
+        print("Batch: ",counter,"\te_mae: ",round(temp_e.item(),3),"\tf_mae: ",round(temp_f.item(),3))
         e_mae+=temp_e
         f_mae+=temp_f
     print("||Final Results:||")
-    print("E_MAE: ", round((e_mae/counter).item(),3) ,"\t F_MAE: ",round((f_mae/(counter*3)).item(),3) )
+    print("E_MAE: ", round((e_mae/counter).item(),3) ,"\t F_MAE: ",round((f_mae/(counter)).item(),3) )
     
     
 if __name__ == "__main__":
