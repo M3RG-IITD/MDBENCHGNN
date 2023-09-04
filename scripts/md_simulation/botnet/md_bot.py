@@ -4,14 +4,18 @@ from ase.io import read, write
 import numpy as np
 import time
 import torch
+import argparse
 import sys
 sys.path.append("mdbenchgnn/models/mace")  #Path to mace directory
 from mace.calculators import MACECalculator
 from tqdm import tqdm
+import time
 torch.set_default_dtype(torch.float64)
 
 def main(args):
-    calculator = MACECalculator(model_path=args.model_path, device=args.deviceS, default_dtype='float64')
+    start_time=time.time()
+    
+    calculator = MACECalculator(model_path=args.model_path, device=args.device, default_dtype='float64')
     calculator.model.double() # change model weights type to double precision(hack to avoid error)
     model_name = "botnet"
     
@@ -25,13 +29,16 @@ def main(args):
         dyn.attach(write_frame, interval=1)
         dyn.run(args.runsteps)
         print(f"MD finished!{i}")
+    running_time_seconds = time.time() - start_time
+    print("Time taken: "+str(running_time_seconds/60) +" minute ")
+    
         
         
 if __name__ == "__main__":  
     parser = argparse.ArgumentParser(description="Run MD simulation with BotNET model")
     parser.add_argument("--model_path", type=str, default="example/lips20/botnet/swa_model.pth", help="Path to the model")
     parser.add_argument("--init_conf_path", type=str, default="example/lips20/data/test/botnet.xyz", help="Path to the initial configuration")
-    parser.add_argument("--device", type=str, default="cuda", help="Device:["cpu","cuda"]")
+    parser.add_argument("--device", type=str, default="cuda", help="Device:['cpu','cuda']")
     parser.add_argument("--init_conf_N", type=int, default=10, help="No. of initial configuration, [i=0 to N-1] confs read")
     parser.add_argument("--out_dir", type=str, default="out_dir_sl/neqip/lips20/", help="Output path")
     parser.add_argument("--temp", type=float, default=520, help="Temperature in Kelvin")
