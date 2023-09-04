@@ -66,12 +66,12 @@ def main():
         output = model(batch.to_dict())
         temp_e=(abs(batch['energy']-output['energy'])).sum()
         temp_f=(abs(batch['forces']-output['forces'])).sum()
-        print("Batch: ",counter,"\te_mae: ",round(temp_e.item()/args.batch_size,3),"\tf_mae: ",round(temp_f.item()/args.batch_size,3))
+        print("Batch: ",counter,"\te_mae: ",round(temp_e.item()/args.batch_size,3),"\tf_mae: ",round(temp_f.item()/(args.batch_size*3),3))
         e_mae+=temp_e
         f_mae+=temp_f
     print("||Final Results:||")
-    print("E_MAE: ", round((e_mae/counter).item(),3) ,"\t F_MAE: ",round((f_mae/counter).item(),3) )
+    print("E_MAE: ", round((e_mae/counter).item(),3) ,"\t F_MAE: ",round((f_mae/(counter*3)).item(),3) )
     
-
+    
 if __name__ == "__main__":
     main()
