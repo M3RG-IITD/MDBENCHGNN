@@ -8,9 +8,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 #Example command:
+
 """
 python rdf.py \
 --traj_path "/home/civil/btech/ce1180169/MDBENCHGNN/example_mdbenchgnn/lips20_small/data/test/botnet_g80.xyz" \
+--ref_traj_path "/home/civil/btech/ce1180169/MDBENCHGNN/example_mdbenchgnn/lips20_small/data/test/botnet_g80.xyz" \
 --out_path  "/home/civil/btech/ce1180169/MDBENCHGNN/example_mdbenchgnn/lips20_small/data/test/" \
 --sys_name 'lips20_g80' 
 
@@ -20,6 +22,7 @@ python rdf.py \
 def main(args=None):
     
     Traj = read(args.traj_path, index=':', format='extxyz')
+    Traj_ref=read(args.ref_traj_path, index=':', format='extxyz')
     
     rmin = args.rmin
     dr = args.dr
@@ -28,20 +31,31 @@ def main(args=None):
     r = np.linspace(rmin, rmax, nbins)
 
     analysis = Analysis(Traj)
+    analysis_ref = Analysis(Traj_ref)
+    
     print("Calculating RDF .....")
     if(args.elements!=None):
         elements = (args.elements).split('-')
         rdf = analysis.get_rdf(rmax=rmax, nbins=nbins, imageIdx=None, elements=elements, return_dists=False)
+        rdf_ref = analysis_ref.get_rdf(rmax=rmax, nbins=nbins, imageIdx=None, elements=elements, return_dists=False)    
+        
         yaxis_label='Partial RDF: '+args.elements
     else:
         rdf = analysis.get_rdf(rmax=rmax, nbins=nbins, imageIdx=None, elements=None, return_dists=False)
+        rdf_ref = analysis_ref.get_rdf(rmax=rmax, nbins=nbins, imageIdx=None, elements=None, return_dists=False)
+        
         yaxis_label='Total RDF'
     g_r = np.mean(np.array(rdf), axis=0)
+    g_r_ref = np.mean(np.array(rdf_ref), axis=0)
+
 
     plt.plot(r, g_r)
+    plt.plot(r, g_r_ref,linestyle='--')
     plt.xlabel('Distance (Angstrom)')
     plt.ylabel(yaxis_label)
     plt.title('Radial Distribution Function')
+    plt.legend(['Generated PDF','Reference PDF'])
+    
     plt.savefig(args.out_path+"/"+args.sys_name+"_"+yaxis_label+".png")
     
     data = pd.DataFrame({'r': r, 'g_r': g_r})
@@ -52,6 +66,7 @@ def main(args=None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Calculate and plot RDF")
     parser.add_argument("--traj_path", required=True, help="Path to trajectory file")
+    parser.add_argument("--ref_traj_path", required=True, help="Path to  reference trajectory file")
     parser.add_argument("--out_path", required=True, help="Path to output file")
     parser.add_argument("--rmin", type=float, default=0.0, help="Minimum distance for RDF (Angstrom)")
     parser.add_argument("--rmax", type=float, default=10.0, help="Maximum distance for RDF (Angstrom)")
