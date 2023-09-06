@@ -36,7 +36,7 @@ def main(args=None):
     Angles_mean=np.mean(np.array(Angles),axis=0)
     
     Angles_ref=analysis_ref.get_values(analysis_ref.get_angles(A=A,B=B,C= C, unique=True))
-    Angles_mean=np.mean(np.array(Angles_ref),axis=0)
+    Angles_mean_ref=np.mean(np.array(Angles_ref),axis=0)
     
     
     sns.displot(Angles_mean,kind="kde")
@@ -45,7 +45,7 @@ def main(args=None):
     plt.xlabel(Angle_elems+' Angle')
     plt.savefig(args.out_path+'/'+args.sys_name+"_"+Angle_elems+".png") 
     
-    data = pd.DataFrame({Angle_elems: Angles_mean})
+    data = pd.DataFrame({Angle_elems: Angles_mean,Angle_elems+"_ref": Angles_mean_ref})
     data.to_csv(args.out_path+"/"+args.sys_name+"_"+Angle_elems+".csv")
     print("Done..., check ouput at "+args.out_path)    
     
