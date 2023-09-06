@@ -58,7 +58,7 @@ def main(args=None):
     
     plt.savefig(args.out_path+"/"+args.sys_name+"_"+yaxis_label+".png")
     
-    data = pd.DataFrame({'r': r, 'g_r': g_r})
+    data = pd.DataFrame({'r': r, 'g_r': g_r, 'g_r_ref': g_r_ref })
     data.to_csv(args.out_path+"/"+args.sys_name+"_"+yaxis_label+".csv")
     print("Done..., check ouput at "+args.out_path)    
     #plt.show()
