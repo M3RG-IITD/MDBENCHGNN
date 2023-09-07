@@ -24,7 +24,7 @@ python angle_dist.py \
 
 def main(args=None):
     Traj = ase.io.read(args.traj_path, index=':', format='extxyz')
-    Traj_ref=read(args.ref_traj_path, index=':', format='extxyz')
+    Traj_ref=ase.io.read(args.ref_traj_path, index=':', format='extxyz')
     
     Angle_elems=args.angle
     A,B,C=Angle_elems.split('-')
@@ -38,15 +38,17 @@ def main(args=None):
     Angles_ref=analysis_ref.get_values(analysis_ref.get_angles(A=A,B=B,C= C, unique=True))
     Angles_mean_ref=np.mean(np.array(Angles_ref),axis=0)
     
-    
-    sns.displot(Angles_mean,kind="kde")
+    plt.figure(figsize=(6,6))
+    sns.displot(Angles_mean,kind="kde",)
     sns.displot(Angles_mean_ref,kind="kde")
     
     plt.xlabel(Angle_elems+' Angle')
     plt.savefig(args.out_path+'/'+args.sys_name+"_"+Angle_elems+".png") 
     
-    data = pd.DataFrame({Angle_elems: Angles_mean,Angle_elems+"_ref": Angles_mean_ref})
+    data = pd.DataFrame({Angle_elems: Angles_mean})
+    data_ref = pd.DataFrame({Angle_elems+"_ref": Angles_mean_ref})
     data.to_csv(args.out_path+"/"+args.sys_name+"_"+Angle_elems+".csv")
+    data_ref.to_csv(args.out_path+"/"+args.sys_name+"_"+Angle_elems+"_ref.csv")
     print("Done..., check ouput at "+args.out_path)    
     
        
