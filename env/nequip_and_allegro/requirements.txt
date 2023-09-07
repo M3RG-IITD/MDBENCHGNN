@@ -24,6 +24,6 @@ seaborn==0.12.2
 torch-cluster==1.6.1
 pytorch-lightning==2.0.8
 torch_geometric==2.2.0
-torch_sparse==0.6.17
+torch_sparse==0.6.14
 
 
