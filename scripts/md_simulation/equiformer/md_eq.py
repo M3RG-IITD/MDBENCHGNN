@@ -10,6 +10,7 @@ import sys
 #sys.path.append('mdbenchgnn/models/equiformer') #Relative to MDBNENCHGNN Repository folder
 sys.path.append('./mdbenchgnn/utils/equiformer_ase') #Relative to MDBNENCHGNN Repository folder
 sys.path.append('./mdbenchgnn/models/equiformer/') #Relative to MDBNENCHGNN Repository folder
+sys.path.append("mdbenchgnn/models/ocp/")
 
 from equiformer_calc import *
 import nets

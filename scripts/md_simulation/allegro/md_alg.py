@@ -28,7 +28,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run MD simulation with NequIP model")
     parser.add_argument("--model_path", type=str, default="example/lips20/allegro/deployed_model.pth", help="Path to the model")
     parser.add_argument("--init_conf_path", type=str, default="example/lips20/data/test/botnet.xyz", help="Path to the initial configuration")
-    parser.add_argument("--device", type=str, default="cude", help="Device:["cpu","cuda"]")
+    parser.add_argument("--device", type=str, default="cude", help='Device:["cpu","cuda"]')
     parser.add_argument("--init_conf_N", type=int, default=10, help="No. of initial configuration, [i=0 to N-1] confs read")
     parser.add_argument("--out_dir", type=str, default="./", help="Output directory")
     parser.add_argument("--temp", type=float, default=300.0, help="Temperature in Kelvin")
