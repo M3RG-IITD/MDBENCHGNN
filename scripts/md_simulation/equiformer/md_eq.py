@@ -24,7 +24,7 @@ def main(args):
     device = args.device
     
     # get from equiformer log
-    args = {"input_irreps" : '64x0e' , "radius" : 5.0, "num_basis" : 32, "drop_path" : 0.0 }
+    args_log = {"input_irreps" : '64x0e' , "radius" : 5.0, "num_basis" : 32, "drop_path" : 0.0 }
     mean = -406737.4375
     std =  5.786451816558838
     model_name = 'graph_attention_transformer_nonlinear_exp_l2_md17'
@@ -32,13 +32,13 @@ def main(args):
     ''' Network '''
     create_model = model_entrypoint(model_name)
 
-    model = create_model(irreps_in=args["input_irreps"], 
-        radius=args["radius"], 
-        num_basis=args["num_basis"], 
+    model = create_model(irreps_in=args_log["input_irreps"], 
+        radius=args_log["radius"], 
+        num_basis=args_log["num_basis"], 
         task_mean=mean, 
         task_std=std, 
         atomref=None,
-        drop_path=args["drop_path"])
+        drop_path=args_log["drop_path"])
 
 
     state_dict_path = args.model_path
@@ -46,7 +46,7 @@ def main(args):
     state_dict = torch.load(state_dict_path , map_location=args.device)
 
     model.load_state_dict(state_dict['state_dict'])
-    calculator = EquiformerCalculator(model=model, device=args.device, r_max = args["radius"])
+    calculator = EquiformerCalculator(model=model, device="cpu", r_max = args_log["radius"])
     
     model_name = "equiformer"
     #system = "lips"

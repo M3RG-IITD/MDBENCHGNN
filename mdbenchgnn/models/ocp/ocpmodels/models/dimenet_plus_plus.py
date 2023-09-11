@@ -35,7 +35,8 @@ THE SOFTWARE.
 import torch
 from torch import nn
 from torch_geometric.nn import radius_graph
-from torch_geometric.nn.acts import swish
+# from torch_geometric.nn.acts import swish
+from torch.nn.functional import relu as swish # just to bypass above errror as orch_geometric.nn.acts is depreciated
 from torch_geometric.nn.inits import glorot_orthogonal
 from torch_geometric.nn.models.dimenet import (
     BesselBasisLayer,
