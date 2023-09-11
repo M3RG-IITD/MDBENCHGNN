@@ -8,7 +8,7 @@ TEMP=520
 # SYSTEM="lips20"
 
 # Run the Python command
-python scripts/md_simulation/torchmdnet/md_tmd.py \
+python scripts/md_simulation/nequip/md_nequip.py \
   --model_path "$MODEL_PATH" \
   --init_conf_path $INIT_CONF_PATH \
   --out_dir "$OUT_PATH" \
