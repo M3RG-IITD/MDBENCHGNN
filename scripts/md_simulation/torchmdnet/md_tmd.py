@@ -7,8 +7,10 @@ from tqdm import tqdm
 import sys
 sys.path.append("/home/civil/btech/ce1180169/MDBENCHGNN")
 sys.path.append("mdbenchgnn/models/torchmd-net/torchmdnet/models")
+sys.path.append("mdbenchgnn/models/torchmd-net/")
 from mdbenchgnn.utils.tmdnet_ase.tmdnet_calc import TmdnetCalculator
 from model import load_model
+import argparse
 
 
 
@@ -31,7 +33,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run MD simulation with TorchMD-NET model")
     parser.add_argument("--model_path", type=str, default="Output_mdbgnn/tmdnet/md17/aspirin/epoch=2739-val_loss=0.1136-test_loss=0.1902.ckpt", help="Path to the model checkpoint")
     parser.add_argument("--init_conf_path", type=str, default="example/lips20/data/test/botnet.xyz", help="Path to the initial configuration")
-    parser.add_argument("--device", type=str, default="cpu", help="Device:["cpu","cuda"]")
+    parser.add_argument("--device", type=str, default="cpu", help='Device:["cpu","cuda"]')
     parser.add_argument("--init_conf_N", type=int, default=10, help="No. of initial configuration, [i=0 to N-1] confs read")
     parser.add_argument("--out_dir", type=str, default="out_dir_sl/neqip/lips20/", help="Output path")
     parser.add_argument("--temp", type=float, default=520, help="Temperature in Kelvin")
