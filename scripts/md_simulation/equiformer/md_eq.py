@@ -46,7 +46,7 @@ def main(args):
     state_dict = torch.load(state_dict_path , map_location=args.device)
 
     model.load_state_dict(state_dict['state_dict'])
-    calculator = EquiformerCalculator(model=model, device="cpu", r_max = args_log["radius"])
+    calculator = EquiformerCalculator(model=model, device="cpu", r_max = args_log["radius"],mean=mean, std=std)
     
     model_name = "equiformer"
     #system = "lips"
