@@ -14,10 +14,6 @@ from nequip.data.transforms import TypeMapper
 import nequip.scripts.deploy
 
 
-# for lips
-mean = -357.6152648925781
-std = 0.5507857203483582
-
 def equiformer_calculator(model, **kwargs):
     """Build ASE Calculator directly from deployed model."""
     return EquiformerCalculator.from_deployed_model(model, **kwargs)
@@ -38,6 +34,8 @@ class EquiformerCalculator(Calculator):
         self,
         model: torch.jit.ScriptModule,
         r_max: float,
+        mean: float,
+        std: float,
         device: Union[str, torch.device],
         energy_units_to_eV: float = 1.0,
         length_units_to_A: float = 1.0,
