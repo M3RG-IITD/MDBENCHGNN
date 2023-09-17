@@ -49,6 +49,8 @@ class EquiformerCalculator(Calculator):
             model, torch.nn.Module
         ), "To build a NequIPCalculator from a deployed model, use NequIPCalculator.from_deployed_model"
         self.r_max = r_max
+        self.mean = mean
+        self.std = std
         self.device = device
         self.energy_units_to_eV = energy_units_to_eV
         self.length_units_to_A = length_units_to_A
@@ -135,7 +137,7 @@ class EquiformerCalculator(Calculator):
                 .squeeze(-1)
                 .cpu()
                 .numpy()
-            )*std + mean 
+            )*self.std + self.mean 
         self.results["free_energy"] = self.results["energy"]
         # force has units eng / len:
         self.results["forces"] = (
