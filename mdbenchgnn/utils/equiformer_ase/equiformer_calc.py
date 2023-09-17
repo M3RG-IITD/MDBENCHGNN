@@ -142,4 +142,4 @@ class EquiformerCalculator(Calculator):
         # force has units eng / len:
         self.results["forces"] = (
             self.energy_units_to_eV / self.length_units_to_A
-        ) * pred_dy.detach().cpu().numpy()*std
+        ) * pred_dy.detach().cpu().numpy()*self.std
