@@ -1,8 +1,6 @@
 # MDBENCHGNN 
 Equivariant Graph Neural Networks for building interatomic potentials.
 
-[![DOI](https://zenodo.org/badge/663177034.svg)](https://zenodo.org/badge/latestdoi/663177034)
-
 <div style="text-align:center">
   <img src="assets/mdbenchgnn_logo.jpeg" alt="Image" width="350" height="350">
 </div>
@@ -52,9 +50,6 @@ see : [preprocessing](preprocessing)
 
 # Postprocess
 1. Radial Distribution function [scripts/struct_props](scripts/struct_props)
-
-# Citing
-[https://zenodo.org/record/8151657](https://zenodo.org/record/8151657)
 
 ## Acknowledgement ##
 
