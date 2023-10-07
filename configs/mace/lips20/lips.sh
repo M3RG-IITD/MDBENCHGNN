@@ -1,0 +1,22 @@
+python3 /home/civil/btech/ce1180169/MDBENCHGNN/mdbenchgnn/models/mace/scripts/run_train.py \
+  --name="MACE_model_500_lips20" \
+  --log_dir="/home/civil/btech/ce1180169/MDBENCHGNN/output_dir_sl/mace/lips20/logs" \
+  --model_dir="/home/civil/btech/ce1180169/MDBENCHGNN/output_dir_sl/mace/lips20" \
+  --results_dir="/home/civil/btech/ce1180169/MDBENCHGNN/output_dir_sl/mace/lips20/results" \
+  --checkpoints_dir="/home/civil/btech/ce1180169/MDBENCHGNN/output_dir_sl/mace/lips20/checkpoints" \
+  --train_file='/home/civil/btech/ce1180169/MDBENCHGNN/example/lips20/data/train/botnet.xyz' \
+  --valid_file='/home/civil/btech/ce1180169/MDBENCHGNN/example/lips20/data/val/botnet.xyz' \
+  --E0s='{3:-216.78673811801755, 15:-1537.0898574856286, 16:-1867.8202267974733}' \
+  --model="ScaleShiftMACE" \
+  --hidden_irreps='16x0e+16x1o+16x2e ' \
+  --r_max=5.0 \
+  --batch_size=10 \
+  --valid_batch_size=10 \
+  --max_num_epochs=1000 \
+  --ema \
+  --ema_decay=0.99 \
+  --amsgrad \
+  --default_dtype="float32" \
+  --device=cuda \
+  --seed=123 \
+  --swa

@@ -1,0 +1,22 @@
+python3 -u /home/civil/btech/ce1180169/MDBENCHGNN/mdbenchgnn/models/mace/scripts/run_train.py \
+  --name="MACE_model_500_GeTe" \
+  --log_dir="/home/civil/btech/ce1180169/MDBENCHGNN/output_dir_sl/mace/GeTe/logs" \
+  --model_dir="/home/civil/btech/ce1180169/MDBENCHGNN/output_dir_sl/mace/GeTe" \
+  --results_dir="/home/civil/btech/ce1180169/MDBENCHGNN/output_dir_sl/mace/GeTe/results" \
+  --checkpoints_dir="/home/civil/btech/ce1180169/MDBENCHGNN/output_dir_sl/mace/GeTe/checkpoints" \
+  --train_file='/home/civil/btech/ce1180169/MDBENCHGNN/example/GeTe/data/train/botnet.xyz' \
+  --valid_file='/home/civil/btech/ce1180169/MDBENCHGNN/example/GeTe/data/val/botnet.xyz' \
+  --E0s='{32:-189.3718287987982, 52:-350.4288989798778, 6:-1029.2809654211628, 7:-1484.1187695035828, 8:-2042.0330099956639, 15:-1537.0898574856286, 16:-1867.8202267974733}'  \
+  --model="ScaleShiftMACE" \
+  --hidden_irreps='16x0e+16x1o+16x2e ' \
+  --r_max=8.0 \
+  --batch_size=20 \
+  --valid_batch_size=20 \
+  --max_num_epochs=1500 \
+  --ema \
+  --ema_decay=0.99 \
+  --amsgrad \
+  --default_dtype="float32" \
+  --device=cuda \
+  --seed=123 \
+  --swa
