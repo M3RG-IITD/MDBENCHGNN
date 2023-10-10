@@ -2,7 +2,7 @@ numpy==1.24.3
 torch-runstats==0.2.0
 torch-ema==0.3
 e3nn==0.5.1
-tqdm=4.65.0
+tqdm==4.65.0
 ase==3.22.1
 opt-einsum-fx==0.1.4
 scipy==1.10.1
