@@ -10,4 +10,4 @@
 9. pip install torchmetrics==0.8.2
 10. cd mdbenchgnn/models/torchmd-net/
 11. pip install --no-deps -e  .
-12 pip install --no-deps ase
+12. pip install --no-deps ase
