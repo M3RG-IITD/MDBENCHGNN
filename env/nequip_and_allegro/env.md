@@ -1,5 +1,4 @@
-0.module load compiler/gcc/6.5.0/compilervars
-
+0. module load compiler/gcc/6.5.0/compilervars
 1. conda create -n neq_alg python==3.9
 2. conda activate neq_alg
 3. conda install  cudatoolkit=11.1  -c conda-forge
