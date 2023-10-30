@@ -6,7 +6,7 @@ Equivariant Graph Neural Networks for building interatomic potentials.
 </div>
 
 
-# Neu_sde
+
 Code to paper: [EGRAFFBENCH: EVALUATION OF EQUIVARIANT GRAPH
 NEURAL NETWORK FORCE FIELDS FOR ATOMISTIC
 SIMULATIONS](https://arxiv.org/pdf/2310.02428.pdf)
