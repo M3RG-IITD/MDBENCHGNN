@@ -1,5 +1,7 @@
-# MDBENCHGNN 
-Equivariant Graph Neural Networks for building interatomic potentials.
+Code to paper: [EGRAFFBENCH: EVALUATION OF EQUIVARIANT GRAPH
+NEURAL NETWORK FORCE FIELDS FOR ATOMISTIC
+SIMULATIONS](https://arxiv.org/pdf/2310.02428.pdf)
+
 
 <div style="text-align:center">
   <img src="assets/mdbenchgnn_logo.jpeg" alt="Image" width="350" height="350">
@@ -7,9 +9,6 @@ Equivariant Graph Neural Networks for building interatomic potentials.
 
 
 
-Code to paper: [EGRAFFBENCH: EVALUATION OF EQUIVARIANT GRAPH
-NEURAL NETWORK FORCE FIELDS FOR ATOMISTIC
-SIMULATIONS](https://arxiv.org/pdf/2310.02428.pdf)
 
 # Setup environment
 see : [env](env)
