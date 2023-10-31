@@ -26,6 +26,9 @@ pytorch-lightning==2.0.8
 torch_geometric==2.2.0
 torch_sparse==0.6.14
 torch-scatter==2.1.2
+lightning-utilities==0.9.0
+fsspec==2023.10.0
+torchmetrics==1.2.0
 
 
 
