@@ -1,0 +1,3 @@
+downloaded from: http://www.sgdml.org/#datasets
+
+eg: wget http://www.quantum-machine.org/gdml/data/xyz/md17_aspirin.zip
